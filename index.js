@@ -15,6 +15,10 @@ async function start (){
                 value: "listar"
             },
             {
+                name: "Metas realizadas",
+                value: "realizadas"
+            },
+            {
                 name: "Sair",
                 value: "sair"
             }
@@ -62,6 +66,23 @@ async function start (){
             console.log("Meta(s) concluida(s)")
         }
 
+        const metasRealizadas = async () => {
+            const realizadas = metas.filter((meta) => {
+                return meta.checked == true
+            })
+
+            if(realizadas.length == 0 ){
+                console.log("Não existe mestas realizadas")
+                return
+            }
+
+            await select({
+                message: "Metas realizadas",
+                choices: [...realizadas]
+            })
+            console.log(realizadas)
+        }
+
         switch(opcao){
             case "cadastrar":
                 await cadastrarMeta()
@@ -69,6 +90,9 @@ async function start (){
             break
             case "listar":
                 await listarMetas()
+            break
+            case "realizadas":
+                await metasRealizadas()
             break
             case "sair":
                 console.log("Até a proxima!")
