@@ -1,0 +1,18 @@
+[
+  {
+    "value": "Estudar programação",
+    "checked": false
+  },
+  {
+    "value": "Treinar",
+    "checked": false
+  },
+  {
+    "value": "Trabalhar",
+    "checked": false
+  },
+  {
+    "value": "Acordar cedo",
+    "checked": false
+  }
+]
